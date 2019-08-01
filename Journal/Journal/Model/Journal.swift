@@ -11,7 +11,7 @@ import CloudKit
 
 class Journal: CloudKitSyncable, Equatable {
 
-    static let kType = "JouranlDaily"
+    static let kType = "Jouranl"
     static let kPhotoData = "photoData"
     static let kTitle = "title"
     static let kTimeStamp = "timeStamp"
@@ -71,7 +71,7 @@ extension CKRecord {
     convenience init(journal: Journal) {
         
         let recordID = journal.cloudKitRecordID ?? CKRecord.ID(recordName: UUID().uuidString)
-        self.init(recordType: "JournalDaily", recordID: recordID)
+        self.init(recordType: "Journal", recordID: recordID)
         self.setValue(journal.title, forKey: Journal.kTitle)
         self.setValue(journal.journalText, forKey: Journal.kJournaltext)
         self[Journal.kTimeStamp] = journal.timeStamp as CKRecordValue?

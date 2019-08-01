@@ -80,21 +80,21 @@ class JournalController {
         return dateFormatter
     }()
     
-    // MARK: - Fetch Journals by months
-//    func filterJournalsBy(month: String) -> [Journal] {
-//
-//        var filteredJournals: [Journal] = []
-//
-//        for journal in self.journals {
-//            let timestampString =  journal.timeStamp.returnMonthOfTimestamp()
-//            if timestampString.contains(month) {
-//                filteredJournals.append(journal)
-//            }
-//        }
-//
-//        let sortedJournals = filteredJournals.sorted(by: { $0.0.timeStamp > $0.1.timeStamp })
-//        return sortedJournals
-//    }
+    //  MARK: - Fetch Journals by months
+    func filterJournalsBy(month: String) -> [Journal] {
+        
+        var filteredJournals: [Journal] = []
+        
+        for journal in self.journals {
+            let timestampString =  journal.timeStamp.returnMonthOfTimestamp()
+            if timestampString.contains(month) {
+                filteredJournals.append(journal)
+            }
+        }
+        
+        let sortedJournals = filteredJournals.sorted(by: { $0.timeStamp > $1.timeStamp } )
+        return sortedJournals
+    }
 }
 
 extension Date {
