@@ -12,6 +12,13 @@
 		EF7C1CD522F2721300161F14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF7C1CD422F2721300161F14 /* Assets.xcassets */; };
 		EF7C1CD822F2721300161F14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF7C1CD622F2721300161F14 /* LaunchScreen.storyboard */; };
 		EF7C1CE722F2736F00161F14 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF7C1CE622F2736F00161F14 /* CloudKit.framework */; };
+		EF7C1CE922F273C700161F14 /* Journal.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7C1CE822F273C700161F14 /* Journal.swift */; };
+		EF7C1CEC22F2741900161F14 /* CloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7C1CEB22F2741900161F14 /* CloudKitManager.swift */; };
+		EF7C1CEE22F2746B00161F14 /* CloudKitSyncable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7C1CED22F2746B00161F14 /* CloudKitSyncable.swift */; };
+		EF7C1CF022F275F400161F14 /* JournalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7C1CEF22F275F400161F14 /* JournalController.swift */; };
+		EF7C1CF222F28C1F00161F14 /* JournalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7C1CF122F28C1F00161F14 /* JournalDetailViewController.swift */; };
+		EF7C1CF422F2B0F500161F14 /* JournalCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7C1CF322F2B0F500161F14 /* JournalCollectionViewController.swift */; };
+		EF7C1CF722F2B19E00161F14 /* JournalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7C1CF622F2B19E00161F14 /* JournalCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +30,13 @@
 		EF7C1CD922F2721300161F14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF7C1CE422F2736B00161F14 /* Journal.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Journal.entitlements; sourceTree = "<group>"; };
 		EF7C1CE622F2736F00161F14 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		EF7C1CE822F273C700161F14 /* Journal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Journal.swift; sourceTree = "<group>"; };
+		EF7C1CEB22F2741900161F14 /* CloudKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitManager.swift; sourceTree = "<group>"; };
+		EF7C1CED22F2746B00161F14 /* CloudKitSyncable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitSyncable.swift; sourceTree = "<group>"; };
+		EF7C1CEF22F275F400161F14 /* JournalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalController.swift; sourceTree = "<group>"; };
+		EF7C1CF122F28C1F00161F14 /* JournalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalDetailViewController.swift; sourceTree = "<group>"; };
+		EF7C1CF322F2B0F500161F14 /* JournalCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalCollectionViewController.swift; sourceTree = "<group>"; };
+		EF7C1CF622F2B19E00161F14 /* JournalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +76,8 @@
 				EF7C1CE322F2725D00161F14 /* Model */,
 				EF7C1CE222F2725400161F14 /* Model Controllers */,
 				EF7C1CE122F2724A00161F14 /* ViewControllers */,
+				EF7C1CF522F2B18400161F14 /* View */,
+				EF7C1CEA22F273FD00161F14 /* CloudKit Manager */,
 				EF7C1CDF22F2722900161F14 /* Storyboard */,
 			);
 			path = Journal;
@@ -89,6 +105,8 @@
 		EF7C1CE122F2724A00161F14 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				EF7C1CF122F28C1F00161F14 /* JournalDetailViewController.swift */,
+				EF7C1CF322F2B0F500161F14 /* JournalCollectionViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -96,6 +114,7 @@
 		EF7C1CE222F2725400161F14 /* Model Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				EF7C1CEF22F275F400161F14 /* JournalController.swift */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -103,6 +122,7 @@
 		EF7C1CE322F2725D00161F14 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EF7C1CE822F273C700161F14 /* Journal.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -113,6 +133,23 @@
 				EF7C1CE622F2736F00161F14 /* CloudKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EF7C1CEA22F273FD00161F14 /* CloudKit Manager */ = {
+			isa = PBXGroup;
+			children = (
+				EF7C1CEB22F2741900161F14 /* CloudKitManager.swift */,
+				EF7C1CED22F2746B00161F14 /* CloudKitSyncable.swift */,
+			);
+			path = "CloudKit Manager";
+			sourceTree = "<group>";
+		};
+		EF7C1CF522F2B18400161F14 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EF7C1CF622F2B19E00161F14 /* JournalCollectionViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +232,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF7C1CCE22F2721300161F14 /* AppDelegate.swift in Sources */,
+				EF7C1CF222F28C1F00161F14 /* JournalDetailViewController.swift in Sources */,
+				EF7C1CF422F2B0F500161F14 /* JournalCollectionViewController.swift in Sources */,
+				EF7C1CEE22F2746B00161F14 /* CloudKitSyncable.swift in Sources */,
+				EF7C1CF722F2B19E00161F14 /* JournalCollectionViewCell.swift in Sources */,
+				EF7C1CE922F273C700161F14 /* Journal.swift in Sources */,
+				EF7C1CF022F275F400161F14 /* JournalController.swift in Sources */,
+				EF7C1CEC22F2741900161F14 /* CloudKitManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,7 +387,7 @@
 				CODE_SIGN_ENTITLEMENTS = Journal/Journal.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7V775U4648;
-				INFOPLIST_FILE = Journal/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Rresources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -362,7 +406,7 @@
 				CODE_SIGN_ENTITLEMENTS = Journal/Journal.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7V775U4648;
-				INFOPLIST_FILE = Journal/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Rresources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

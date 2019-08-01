@@ -14,7 +14,7 @@
         <!--Journal-->
         <scene sceneID="Mn4-v0-t4b">
             <objects>
-                <collectionViewController id="hFF-BJ-QAJ" customClass="JournalCollectionViewController" customModule="Jouranl" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="hFF-BJ-QAJ" customClass="JournalCollectionViewController" customModule="Journal" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="aeQ-Ag-wUa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -59,7 +59,7 @@
         <!--Title-->
         <scene sceneID="pIf-XI-tiK">
             <objects>
-                <viewController id="zQk-IJ-qup" customClass="JournalDetailViewController" customModule="Jouranl" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="zQk-IJ-qup" customClass="JournalDetailViewController" customModule="Journal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="F7m-sG-Zvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -96,6 +96,7 @@
                                         <rect key="frame" x="0.0" y="689" width="382" height="30"/>
                                         <state key="normal" title="Start Recording"/>
                                         <connections>
+                                            <action selector="microphoneTapped:" destination="zQk-IJ-qup" eventType="touchUpInside" id="Gvd-8R-gbS"/>
                                             <action selector="recordingButtonTapped:" destination="zQk-IJ-qup" eventType="touchUpInside" id="JJm-Ba-Gkj"/>
                                         </connections>
                                     </button>
@@ -105,7 +106,7 @@
                                 <rect key="frame" x="16" y="823" width="382" height="22"/>
                                 <state key="normal" title="Add Image"/>
                                 <connections>
-                                    <action selector="addImageButtonTapped:" destination="zQk-IJ-qup" eventType="touchUpInside" id="EFa-xg-ibb"/>
+                                    <action selector="addImageButtonTapped:" destination="zQk-IJ-qup" eventType="touchUpInside" id="o0r-tz-s6X"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -125,16 +126,17 @@
                     <navigationItem key="navigationItem" title="Title" id="79Y-hN-mhN">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="zB9-I1-VlD">
                             <connections>
-                                <action selector="saveButtonTapped:" destination="zQk-IJ-qup" id="fBV-ox-RoG"/>
+                                <action selector="saveButtonTapped:" destination="zQk-IJ-qup" id="wTX-hr-4oR"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="addImage" destination="YTO-pV-sHs" id="jQ8-zQ-Ary"/>
-                        <outlet property="imageView" destination="UCA-5D-w7Z" id="KJ8-Dw-axJ"/>
-                        <outlet property="journalTextView" destination="Jcf-pB-flu" id="CHL-Xk-Hwf"/>
+                        <outlet property="addImageButton" destination="YTO-pV-sHs" id="d9c-oB-sph"/>
+                        <outlet property="journalPictureImageView" destination="UCA-5D-w7Z" id="BfD-Nu-gxb"/>
+                        <outlet property="journalTextView" destination="Jcf-pB-flu" id="PMA-gN-5K7"/>
+                        <outlet property="microphoneButton" destination="AFJ-2I-gV4" id="jcM-ib-Szh"/>
                         <outlet property="recordButton" destination="AFJ-2I-gV4" id="NAR-PL-TE9"/>
-                        <outlet property="titleTextField" destination="4Zl-ja-fXr" id="kRn-Lw-IXu"/>
+                        <outlet property="titleTextField" destination="4Zl-ja-fXr" id="Y4q-cp-jMP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vJR-pU-ftf" userLabel="First Responder" sceneMemberID="firstResponder"/>
