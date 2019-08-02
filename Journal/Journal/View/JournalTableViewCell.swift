@@ -24,5 +24,4 @@ class JournalTableViewCell: UITableViewCell {
         titleLabel.text = journal.title
         journalImageView.image = journal.photo
     }
-
 }

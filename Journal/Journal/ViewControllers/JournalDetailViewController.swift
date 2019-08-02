@@ -30,6 +30,45 @@ class JournalDetailViewController: UIViewController, SFSpeechRecognizerDelegate,
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        microphoneButton.isEnabled = false  //2
+        
+        speechRecognizer?.delegate = self  //3
+        if let journal = journal {
+            updateViews(journal: journal)
+        }
+        SFSpeechRecognizer.requestAuthorization { (authStatus) in  //4
+            
+            var isButtonEnabled = false
+            
+            switch authStatus {  //5
+            case .authorized:
+                isButtonEnabled = true
+                
+            case .denied:
+                isButtonEnabled = false
+                print("User denied access to speech recognition")
+                
+            case .restricted:
+                isButtonEnabled = false
+                print("Speech recognition restricted on this device")
+                
+            case .notDetermined:
+                isButtonEnabled = false
+                print("Speech recognition not yet authorized")
+            }
+            
+            OperationQueue.main.addOperation() {
+                self.microphoneButton.isEnabled = isButtonEnabled
+            }
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let journal = journal {
+            updateViews(journal: journal)
+        }
     }
     
     // MARK: - Methods
@@ -48,6 +87,11 @@ class JournalDetailViewController: UIViewController, SFSpeechRecognizerDelegate,
             print("error")
         }
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func dismissKeyboard() {
+        titleTextField.resignFirstResponder()
+        journalTextView.resignFirstResponder()
     }
     
     // MARK: - Speech functions
@@ -142,6 +186,10 @@ class JournalDetailViewController: UIViewController, SFSpeechRecognizerDelegate,
         self.present(image, animated: true) {
             
         }
+    }
+    
+    @IBAction func viewTapped(_ sender: Any) {
+        dismissKeyboard()
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {

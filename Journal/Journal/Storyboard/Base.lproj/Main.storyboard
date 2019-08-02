@@ -52,7 +52,6 @@
                                         <state key="normal" title="Start Recording"/>
                                         <connections>
                                             <action selector="microphoneTapped:" destination="zQk-IJ-qup" eventType="touchUpInside" id="Gvd-8R-gbS"/>
-                                            <action selector="recordingButtonTapped:" destination="zQk-IJ-qup" eventType="touchUpInside" id="JJm-Ba-Gkj"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -66,6 +65,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="d4a-LE-z3U" firstAttribute="bottom" secondItem="YTO-pV-sHs" secondAttribute="bottom" constant="17" id="3aI-JE-WcB"/>
                             <constraint firstItem="d4a-LE-z3U" firstAttribute="trailing" secondItem="KSO-cS-QNM" secondAttribute="trailing" constant="16" id="AKX-U7-O09"/>
@@ -77,6 +77,9 @@
                             <constraint firstItem="KSO-cS-QNM" firstAttribute="leading" secondItem="d4a-LE-z3U" secondAttribute="leading" constant="16" id="vtL-nC-XUk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="d4a-LE-z3U"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="kKz-d8-EBJ" appends="YES" id="64u-rl-pGg"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="79Y-hN-mhN">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="zB9-I1-VlD">
@@ -90,11 +93,15 @@
                         <outlet property="journalPictureImageView" destination="UCA-5D-w7Z" id="BfD-Nu-gxb"/>
                         <outlet property="journalTextView" destination="Jcf-pB-flu" id="PMA-gN-5K7"/>
                         <outlet property="microphoneButton" destination="AFJ-2I-gV4" id="jcM-ib-Szh"/>
-                        <outlet property="recordButton" destination="AFJ-2I-gV4" id="NAR-PL-TE9"/>
                         <outlet property="titleTextField" destination="4Zl-ja-fXr" id="Y4q-cp-jMP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vJR-pU-ftf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="kKz-d8-EBJ">
+                    <connections>
+                        <action selector="viewTapped:" destination="zQk-IJ-qup" id="joL-lf-D7y"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1734.7826086956522" y="101.78571428571428"/>
         </scene>
@@ -125,39 +132,39 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="JournalCell" rowHeight="73" id="Fdh-cK-fAh" customClass="JournalTableViewCell" customModule="Journal" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="73"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="JournalCell" rowHeight="83" id="Fdh-cK-fAh" customClass="JournalTableViewCell" customModule="Journal" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="83"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Fdh-cK-fAh" id="tDB-oY-n3n">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="72.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="82.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Lo-gm-ZD7">
-                                            <rect key="frame" x="8" y="8" width="240" height="57"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h1e-FG-DaV">
+                                            <rect key="frame" x="287" y="19" width="107" height="45"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="h1e-FG-DaV" secondAttribute="height" multiplier="107:45" id="sxX-jn-vXd"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gfm-9Q-GoI">
+                                            <rect key="frame" x="20" y="19" width="259" height="45"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h1e-FG-DaV">
-                                            <rect key="frame" x="257.5" y="8" width="148.5" height="56.5"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" secondItem="h1e-FG-DaV" secondAttribute="height" multiplier="50:19" id="E7h-cS-z81"/>
-                                            </constraints>
-                                        </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="h1e-FG-DaV" secondAttribute="trailing" constant="8" id="8Bz-HJ-Fmn"/>
-                                        <constraint firstAttribute="bottom" secondItem="h1e-FG-DaV" secondAttribute="bottom" constant="8" id="FsP-4r-s3y"/>
-                                        <constraint firstItem="h1e-FG-DaV" firstAttribute="top" secondItem="tDB-oY-n3n" secondAttribute="top" constant="8" id="McT-zb-Iib"/>
-                                        <constraint firstItem="8Lo-gm-ZD7" firstAttribute="top" secondItem="tDB-oY-n3n" secondAttribute="top" constant="8" id="as0-Uj-MMK"/>
-                                        <constraint firstAttribute="bottom" secondItem="8Lo-gm-ZD7" secondAttribute="bottom" constant="7.5" id="dc8-Jt-LTC"/>
-                                        <constraint firstItem="h1e-FG-DaV" firstAttribute="leading" secondItem="8Lo-gm-ZD7" secondAttribute="trailing" constant="9.5" id="eVo-rk-0uD"/>
-                                        <constraint firstItem="8Lo-gm-ZD7" firstAttribute="leading" secondItem="tDB-oY-n3n" secondAttribute="leading" constant="8" id="vgT-c1-pj6"/>
+                                        <constraint firstItem="h1e-FG-DaV" firstAttribute="leading" secondItem="Gfm-9Q-GoI" secondAttribute="trailing" constant="8" id="LgV-xm-y5s"/>
+                                        <constraint firstAttribute="trailing" secondItem="h1e-FG-DaV" secondAttribute="trailing" constant="20" id="OYf-6F-yKh"/>
+                                        <constraint firstItem="h1e-FG-DaV" firstAttribute="top" secondItem="tDB-oY-n3n" secondAttribute="top" constant="19" id="Q52-GO-Qng"/>
+                                        <constraint firstAttribute="bottom" secondItem="Gfm-9Q-GoI" secondAttribute="bottom" constant="18.5" id="Uk4-oF-KLp"/>
+                                        <constraint firstItem="Gfm-9Q-GoI" firstAttribute="leading" secondItem="tDB-oY-n3n" secondAttribute="leading" constant="20" id="WME-ZX-4YD"/>
+                                        <constraint firstAttribute="bottom" secondItem="h1e-FG-DaV" secondAttribute="bottom" constant="18.5" id="Wnl-Sr-MtQ"/>
+                                        <constraint firstItem="Gfm-9Q-GoI" firstAttribute="top" secondItem="tDB-oY-n3n" secondAttribute="top" constant="19" id="xdZ-RT-8xm"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="journalImageView" destination="h1e-FG-DaV" id="XBo-SD-OEP"/>
-                                    <outlet property="titleLabel" destination="8Lo-gm-ZD7" id="E22-cX-9tf"/>
+                                    <outlet property="titleLabel" destination="Gfm-9Q-GoI" id="3Yo-33-daw"/>
                                     <segue destination="iHd-o7-XrV" kind="show" identifier="toJournalVC" id="5nz-p7-h8H"/>
                                 </connections>
                             </tableViewCell>
@@ -168,7 +175,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="ulK-OU-955">
-                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="lCl-zW-xqC"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="lCl-zW-xqC">
+                            <connections>
+                                <segue destination="zQk-IJ-qup" kind="show" identifier="" id="6R3-B3-OWJ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HU2-cg-qjd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -192,7 +203,7 @@
                                             <constraint firstAttribute="height" constant="193" id="mOs-xJ-3Uu"/>
                                         </constraints>
                                     </imageView>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="isB-nK-iMD">
+                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="isB-nK-iMD">
                                         <rect key="frame" x="0.0" y="201" width="382" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="6AC-LA-Bou"/>
@@ -201,7 +212,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3Tc-fA-PgO">
+                                    <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3Tc-fA-PgO">
                                         <rect key="frame" x="0.0" y="239" width="382" height="442"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -232,7 +243,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="journalImageView" destination="oz7-Mb-nfG" id="j0x-Dh-rkh"/>
-                        <outlet property="journalPictureImageView" destination="oz7-Mb-nfG" id="I6Q-AA-Zn2"/>
                         <outlet property="journalTextView" destination="3Tc-fA-PgO" id="8wX-Dl-LzH"/>
                         <outlet property="titleTextField" destination="isB-nK-iMD" id="aJY-lK-rbO"/>
                     </connections>
@@ -242,4 +252,7 @@
             <point key="canvasLocation" x="1003" y="825"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="6R3-B3-OWJ"/>
+    </inferredMetricsTieBreakers>
 </document>

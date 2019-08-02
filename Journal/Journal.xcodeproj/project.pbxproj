@@ -17,7 +17,6 @@
 		EF7C1CEE22F2746B00161F14 /* CloudKitSyncable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7C1CED22F2746B00161F14 /* CloudKitSyncable.swift */; };
 		EF7C1CF022F275F400161F14 /* JournalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7C1CEF22F275F400161F14 /* JournalController.swift */; };
 		EF7C1CF222F28C1F00161F14 /* JournalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7C1CF122F28C1F00161F14 /* JournalDetailViewController.swift */; };
-		EF7C1CF922F2B33B00161F14 /* JournalLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7C1CF822F2B33B00161F14 /* JournalLayout.swift */; };
 		EF7C1CFC22F2BFBD00161F14 /* JournalEditingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7C1CFB22F2BFBD00161F14 /* JournalEditingViewController.swift */; };
 		EF7C1CFE22F35AAE00161F14 /* JournalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7C1CFD22F35AAE00161F14 /* JournalTableViewController.swift */; };
 		EF7C1D0022F35BB900161F14 /* JournalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7C1CFF22F35BB900161F14 /* JournalTableViewCell.swift */; };
@@ -37,7 +36,6 @@
 		EF7C1CED22F2746B00161F14 /* CloudKitSyncable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitSyncable.swift; sourceTree = "<group>"; };
 		EF7C1CEF22F275F400161F14 /* JournalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalController.swift; sourceTree = "<group>"; };
 		EF7C1CF122F28C1F00161F14 /* JournalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalDetailViewController.swift; sourceTree = "<group>"; };
-		EF7C1CF822F2B33B00161F14 /* JournalLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalLayout.swift; sourceTree = "<group>"; };
 		EF7C1CFB22F2BFBD00161F14 /* JournalEditingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEditingViewController.swift; sourceTree = "<group>"; };
 		EF7C1CFD22F35AAE00161F14 /* JournalTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalTableViewController.swift; sourceTree = "<group>"; };
 		EF7C1CFF22F35BB900161F14 /* JournalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalTableViewCell.swift; sourceTree = "<group>"; };
@@ -81,7 +79,6 @@
 				EF7C1CE222F2725400161F14 /* Model Controllers */,
 				EF7C1CE122F2724A00161F14 /* ViewControllers */,
 				EF7C1CF522F2B18400161F14 /* View */,
-				EF7C1CFA22F2B34900161F14 /* Layouts */,
 				EF7C1CEA22F273FD00161F14 /* CloudKit Manager */,
 				EF7C1CDF22F2722900161F14 /* Storyboard */,
 			);
@@ -156,14 +153,6 @@
 				EF7C1CFF22F35BB900161F14 /* JournalTableViewCell.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		EF7C1CFA22F2B34900161F14 /* Layouts */ = {
-			isa = PBXGroup;
-			children = (
-				EF7C1CF822F2B33B00161F14 /* JournalLayout.swift */,
-			);
-			path = Layouts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,7 +239,6 @@
 				EF7C1CFE22F35AAE00161F14 /* JournalTableViewController.swift in Sources */,
 				EF7C1CF222F28C1F00161F14 /* JournalDetailViewController.swift in Sources */,
 				EF7C1CEE22F2746B00161F14 /* CloudKitSyncable.swift in Sources */,
-				EF7C1CF922F2B33B00161F14 /* JournalLayout.swift in Sources */,
 				EF7C1CE922F273C700161F14 /* Journal.swift in Sources */,
 				EF7C1D0022F35BB900161F14 /* JournalTableViewCell.swift in Sources */,
 				EF7C1CF022F275F400161F14 /* JournalController.swift in Sources */,
